@@ -1,0 +1,14 @@
+---
+puppet_server : 'puppet.puppet.test'
+puppetdb_server : 'puppetdb1.puppet.test'
+puppet_reporturl : 'http://puppet.puppet.test:8080/reports/upload'
+puppetmaster_ips:
+  "Primary": 192.168.168.9
+  "Slave": 192.168.168.10
+activemq::stomp_user : 'mcollective'
+activemq::stomp_passwd : 'marionette'
+activemq::stomp_admin : 'admin'
+activemq::stomp_adminpw : 'secret'
+activemq::activemq_mem_min: '100M'
+activemq::activemq_mem_max: '100M'
+mcollective::mc_security_psk: 'vagrant'

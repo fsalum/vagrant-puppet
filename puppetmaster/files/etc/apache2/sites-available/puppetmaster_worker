@@ -1,0 +1,31 @@
+# Puppet Master worker
+
+PassengerHighPerformance on
+PassengerMaxPoolSize 12
+PassengerPoolIdleTime 1500
+PassengerStatThrottleRate 120
+RackAutoDetect Off
+RailsAutoDetect Off
+
+Listen 18140
+
+<VirtualHost *:18140>
+  SSLEngine off
+  ErrorLog /var/log/apache2/puppetmaster_worker_error_18140.log
+  CustomLog /var/log/apache2/puppetmaster_worker_access_18140.log combined
+
+  # Obtain Authentication Information from Client Request Headers
+  SetEnvIf X-Client-Verify "(.*)" SSL_CLIENT_VERIFY=$1
+  SetEnvIf X-SSL-Client-DN "(.*)" SSL_CLIENT_S_DN=$1
+
+  DocumentRoot /usr/share/puppet/rack/puppetmasterd/public/
+  RackBaseURI /
+
+  <Directory /usr/share/puppet/rack/puppetmasterd/>
+    Options None
+    AllowOverride None
+    Order allow,deny
+    allow from all
+  </Directory>
+
+</VirtualHost>
