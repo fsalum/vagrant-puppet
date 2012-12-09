@@ -7,6 +7,8 @@ config.vbguest.iso_path = "~/vagrant/VBoxGuestAdditions/VBoxGuestAdditions_4.2.4
 config.vbguest.auto_update = true
 
   config.vm.define :puppet1 do |n|
+      n.vm.customize ["modifyvm", :id, "--cpus", 2]
+      n.vm.customize ["modifyvm", :id, "--memory", 1024]
       n.vm.network :hostonly, "192.168.168.9"
       n.vm.box  = "squeeze64"
       n.vm.host_name  = "puppet1.puppet.test"
@@ -49,6 +51,8 @@ config.vbguest.auto_update = true
 #  end
 
   config.vm.define :puppetdb1 do |n|
+      n.vm.customize ["modifyvm", :id, "--cpus", 2]
+      n.vm.customize ["modifyvm", :id, "--memory", 1024]
       n.vm.network :hostonly, "192.168.168.12"
       n.vm.box  = "squeeze64"
       n.vm.host_name  = "puppetdb1.puppet.test"
@@ -61,6 +65,7 @@ config.vbguest.auto_update = true
   end
 
   config.vm.define :centos63 do |n|
+      n.vm.customize ["modifyvm", :id, "--memory", 360]
       n.vm.network :hostonly, "192.168.168.13"
       n.vm.box  = "centos63"
       n.vm.host_name  = "centos63.puppet.test"
@@ -72,6 +77,7 @@ config.vbguest.auto_update = true
   end
 
   config.vm.define :debian6 do |n|
+      n.vm.customize ["modifyvm", :id, "--memory", 360]
       n.vm.network :hostonly, "192.168.168.14"
       n.vm.box  = "squeeze64"
       n.vm.host_name  = "debian6.puppet.test"
