@@ -19,9 +19,9 @@ config.vbguest.auto_update = true
       n.vm.provision  :shell, :inline => "dpkg -l | grep puppetlabs-release 1>/dev/null ; if [ $? == 1 ];then wget https://apt.puppetlabs.com/puppetlabs-release-squeeze.deb && dpkg -i puppetlabs-release-squeeze.deb && apt-get update && apt-get install -y puppet facter -t puppetlabs;fi"
       n.vm.provision  :shell, :inline => "if [ ! -d /etc/puppet ];then mkdir /etc/puppet;fi; cp /etc/puppet/files/fileserver.conf /etc/puppet/files/hiera.yaml /etc/puppet"
       n.vm.provision  :puppet do  |puppet|
-        puppet.manifests_path = "puppet/manifests"
+        puppet.manifests_path = "puppetmaster/manifests"
         puppet.manifest_file  = "puppetmaster_setup.pp"
-        puppet.module_path    = "puppet/modules"
+        puppet.module_path    = "puppetmaster/modules"
         puppet.pp_path        = "/etc/puppet"
         puppet.facter         = { "domain" => "puppet.test" }
       end
