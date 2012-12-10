@@ -16,7 +16,6 @@ Setup
     ```
 
 1. Install Vagrant: http://vagrantup.com 
-
 If you are on Vagrant 1.0.5 apply this fix https://github.com/mitchellh/vagrant/issues/1169)
 
 1. Clone the repository and install Vagrant plugins
@@ -28,9 +27,7 @@ If you are on Vagrant 1.0.5 apply this fix https://github.com/mitchellh/vagrant/
     ```
 
 1. Add the Base Boxes
-
-I'm not providing the basebox at this time, but you can find them online.
-
+I'm not providing the basebox at this time, but you can find them online.  
 Just use the same name as I'm listing below when adding them.
 
     ```bash
@@ -56,7 +53,7 @@ Just use the same name as I'm listing below when adding them.
 URLs
 ----
 
-Dashboard: http://puppet1.puppet.test:8080
+Dashboard: http://puppet1.puppet.test:8080  
 PuppetDB: http://puppetdb1.puppet.test:8080
 
 Author
