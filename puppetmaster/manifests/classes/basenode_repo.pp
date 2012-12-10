@@ -37,6 +37,11 @@ class basenode_repo($stage=pre) {
 
     }
     'RedHat','CentOS': {
+      package { 'puppetlabs-release-6-6.noarch':
+        ensure   => present,
+        source   => 'http://yum.puppetlabs.com/el/6/products/i386/puppetlabs-release-6-6.noarch.rpm',
+        provider => rpm,
+      }
     }
     default: {
         fail("Operating System ${::operatingsystem} not supported")
