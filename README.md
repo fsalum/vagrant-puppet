@@ -1,7 +1,7 @@
 Puppet environment for Vagrant
 ==============================
 
-This Vagrant environment automatically install a Puppet 3 master in load balance mode, PuppetDB and Puppet Dashboard.
+This Vagrant environment automatically install a Puppet 3 master in load balance mode, PuppetDB, Puppet Dashboard and MCollective.
 
 Setup
 -----
