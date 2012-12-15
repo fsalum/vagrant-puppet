@@ -61,6 +61,7 @@ config.vbguest.auto_update = true
         puppet.puppet_server = "puppet.puppet.test"
         puppet.puppet_node   = "puppetdb1.puppet.test"
         puppet.facter        = { "domain" => "puppet.test" }
+	puppet.options       = "--report true"
       end
   end
 
@@ -73,6 +74,7 @@ config.vbguest.auto_update = true
         puppet.puppet_server = "puppet.puppet.test"
         puppet.puppet_node   = "centos63.puppet.test"
         puppet.facter        = { "domain" => "puppet.test" }
+	puppet.options       = "--report true"
       end
   end
 
@@ -86,6 +88,7 @@ config.vbguest.auto_update = true
         puppet.puppet_server = "puppet.puppet.test"
         puppet.puppet_node   = "debian6.puppet.test"
         puppet.facter        = { "domain" => "puppet.test" }
+	puppet.options       = "--report true"
       end
   end
 
