@@ -27,8 +27,7 @@ If you are on Vagrant 1.0.5 apply this fix https://github.com/mitchellh/vagrant/
     ```
 
 1. Add the Base Boxes
-I'm not providing the basebox at this time, but you can find them online.  
-Just use the same name as I'm listing below when adding them.
+Download them from [vagrant-basebox](https://github.com/fsalum/vagrant-basebox).
 
     ```bash
     vagrant box add 'squeeze64' squeeze64.box  
