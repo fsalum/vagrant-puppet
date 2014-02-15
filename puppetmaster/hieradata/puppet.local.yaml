@@ -1,10 +1,9 @@
 ---
-puppet_server : 'puppet.puppet.test'
-puppetdb_server : 'puppetdb1.puppet.test'
-puppet_reporturl : 'http://puppet.puppet.test:8080/reports/upload'
+puppet_server : 'puppet.puppet.local'
+puppetdb_server : 'puppetdb1.puppet.local'
 puppetmaster_ips:
-  "Primary": 192.168.168.9
-  "Slave": 192.168.168.10
+  "Primary": 192.168.165.10
+  "Slave": 192.168.165.100
 activemq::stomp_user : 'mcollective'
 activemq::stomp_passwd : 'marionette'
 activemq::stomp_admin : 'admin'

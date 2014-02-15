@@ -3,9 +3,9 @@
   - yaml
 
 :hierarchy:
-  - "%{fqdn}"
-  - "%{domain}"
+  - %{fqdn}
+  - %{domain}
   - common
 
 :yaml:
-   :datadir: /etc/puppet/hieradata
+   :datadir: /etc/puppet/environments/%{environment}/hieradata

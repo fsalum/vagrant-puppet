@@ -10,23 +10,11 @@ Setup
 
 1. Download VirtualBox Guest Additions
 
-    ```bash
-    mkdir -p ~/vagrant/VBoxGuestAdditions && cd ~/vagrant/VBoxGuestAdditions
-    wget http://dlc.sun.com.edgesuite.net/virtualbox/4.2.4/VBoxGuestAdditions_4.2.4.iso 
-    ```
-
 1. Install Vagrant: http://vagrantup.com 
-If you are on Vagrant 1.0.5 apply this fix https://github.com/mitchellh/vagrant/issues/1169)
 
-1. Clone the repository and install Vagrant plugins
+1. Install Vagrant plugins
 
-    ```bash
-    git clone git@github.com:fsalum/vagrant-puppet.git ~/vagrant/puppet
-    vagrant gem install vagrant-hostmaster  
-    vagrant gem install vagrant-vbguest
-    ```
-
-1. Add the Base Boxes
+1. Install Baseboxes
 Download them from [vagrant-basebox](https://github.com/fsalum/vagrant-basebox).
 
     ```bash
@@ -34,11 +22,17 @@ Download them from [vagrant-basebox](https://github.com/fsalum/vagrant-basebox).
     vagrant box add 'centos63' centos63.box  
     ```
 
+1. Install Puppet modules
+
+    ```bash
+    gem install librarian-puppet --no-ri --no-rdoc
+    cd puppetmaster
+    librarian-puppet install
+    ```
+
 1. Start the Puppet VM
 
     ```bash
-    cd ~/vagrant/puppet  
-    git submodule update --init  
     vagrant up
     ```
 
@@ -52,8 +46,8 @@ Download them from [vagrant-basebox](https://github.com/fsalum/vagrant-basebox).
 URLs
 ----
 
-Dashboard: http://puppet1.puppet.test:8080  
-PuppetDB: http://puppetdb1.puppet.test:8080
+Dashboard: http://puppet1.puppet.local:8080  
+PuppetDB: http://puppetdb1.puppet.local:8080
 
 Author
 ------

@@ -1,0 +1,4 @@
+puppetmaster/modules
+puppetmaster/.librarian
+puppetmaster/.tmp
+puppetmaster/Puppetfile.lock
